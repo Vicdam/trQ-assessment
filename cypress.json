@@ -1,11 +1,10 @@
 {
-    "reporter": "mochawesome",
+    "reporter": "cypress-mochawesome-reporter",
     "reporterOptions": {
         "reportDir": "cypress/reports",
-        "reportFilename": "report",
+        "reportFilename": " truq test report",
         "overwrite": "false",
-        "html": "false",
-        "json": "true",
+        
         "charts": "true"
     }
 }

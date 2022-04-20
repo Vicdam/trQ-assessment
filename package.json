@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "echo": ""
+    "test": "test",
+    "cypress:open": "cypress open",
+    "cypress:default": "cypress run --spec truq/cypress/integration/demo.spec.js"
   },
   "keywords": [],
   "author": "",
