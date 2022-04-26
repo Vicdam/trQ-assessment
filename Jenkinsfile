@@ -6,12 +6,12 @@ pipeline{
         string(name: "SPEC", defaultValue: "cypress/integration/**/**", description: "Enter the script path that you want to execute")
         choice(name: "BROWSER", choices:['chrome', 'edge'. 'firefox'], description:"choose the browser where you want to execute your script")
     }
-    options{
-        ansiColour('xterm')
-    }
+    
     stages{
         stage('Building'){
-            echo "Building the Application"
+            steps{
+               echo "Building the Application"
+            }
         }
         stage('Testing'){
             steps{
@@ -20,7 +20,9 @@ pipeline{
             }
         }
         stage('Deploying'){
-            echo "Deploy the Application"
+            steps{
+                echo "Deploy the Application"
+            }
         }
     }
     post{
