@@ -36,3 +36,27 @@
       
 //     })
 // })
+describe('Actions', () =>{
+
+    it('google', () => {
+
+        cy.visit('https://google.com')
+        cy.get('.gLFyf').type('automation step by step{enter}')
+        cy.wait(4000)
+        cy.contains('Videos').click()
+
+    })
+
+})
+it('login test', ()=>{
+    cy.visit('https://gmail.com')
+    cy.get('.cxMOTc > .rFrNMe > .aCsJod > .aXBtI > .OabDMe').type('esther.thompson@getmollo.com')
+})
+
+it.only('test', () =>{
+    cy.visit('https://getmollo.com')
+    cy.get('.header-container > .left-side > .waitlist-form-container > .input-container > [placeholder="Full Name"]')
+    .type('Esther Thompson')
+    cy.get('.header-container > .left-side > .waitlist-form-container > .input-container > [placeholder="Email"]')
+    .type('esther.thompson@getmollo.com')
+})
