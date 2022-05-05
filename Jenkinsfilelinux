@@ -16,7 +16,8 @@ pipeline{
         stage('Testing'){
             steps{
                 sh "npm i"
-                sh "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
+                sh 'npm run cy:verify'
+                sh "npm run test:ci:record"
             }
         }
         stage('Deploying'){
@@ -25,9 +26,3 @@ pipeline{
             }
         }
     }
-    post{
-        always{
-            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'cypress/reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
-        }
-    }
-}
