@@ -1,11 +1,8 @@
   pipeline{
-
+  
     agent {
-    // this image provides everything needed to run Cypress
-    docker {
-      image 'cypress/base:16.13.0'
+        docker { image 'cypress/base:16.13.0' }
     }
-  }
 
     parameters{
         string(name: "SPEC", defaultValue: "cypress/integration/**/**", description: "Enter the script path that you want to execute")
