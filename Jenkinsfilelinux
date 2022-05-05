@@ -13,7 +13,6 @@ pipeline{
                sh "npm i"
             }
         }
-    stages{
         stage('Building'){
             steps{
                echo "Building the Application"
@@ -29,7 +28,7 @@ pipeline{
         stage('Deploying'){
             steps{
                 echo "Deploy the Application"
-            }
-        }
+            }  
+         }
     }
 }
