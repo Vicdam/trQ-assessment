@@ -10,7 +10,7 @@ pipeline{
     stages{
         stage('Install Dependencies'){
             steps{
-               echo "Building the Application"
+               sh "npm i"
             }
         }
         stage('Building'){
@@ -20,7 +20,6 @@ pipeline{
         }
         stage('Testing'){
             steps{
-                sh "npm i"
                 sh "node_modules/.bin/cypress run"
                 sh "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
             }
